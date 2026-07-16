@@ -6,8 +6,7 @@ namespace ArrayCopyBench
 {
     /// <summary>
     /// Standalone benchmark measuring Array.Copy for copying the leading elements of one
-    /// object[] into another (mirrors the key-component copy in
-    /// MergeTableWithBaseAndTransDeltaOperator.ConstructRow). Reports ns per copy.
+    /// object[] into another. Reports ns per copy.
     ///
     /// Usage:
     ///   dotnet run -c Release -- [--length N] [--iterations M] [--runs R] [--offset O]
