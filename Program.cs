@@ -19,7 +19,7 @@ namespace ArrayCopyBench
     {
         // Elements copied per operation (the "_startColumnIndex" in ConstructRow).
         // Add values to sweep in a single run, e.g. [Params(1, 2, 4, 8, 16, 32, 64)].
-        [Params(1,4, 8, 16)]
+        [Params(10, 100, 500)]
         public int Length;
 
         // Destination is wider than the copy region, mirroring RowData vs the key prefix.
