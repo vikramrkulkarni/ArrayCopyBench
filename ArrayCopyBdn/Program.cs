@@ -17,13 +17,13 @@ namespace ArrayCopyBench
     [MemoryDiagnoser(false)]         // report allocations (expected: 0 B for a copy)
     public class ArrayCopyBenchmark
     {
-        // Elements copied per operation (the "_startColumnIndex" in ConstructRow).
+        // Elements copied per operation
         // Add values to sweep in a single run, e.g. [Params(1, 2, 4, 8, 16, 32, 64)].
-        [Params(10, 100, 500)]
+        [Params(4, 10, 100, 500, 2000, 4000)]
         public int Length;
 
-        // Destination is wider than the copy region, mirroring RowData vs the key prefix.
-        private const int Offset = 0;
+        // Destination is wider than the copy region
+        private const int Offset = 10;
 
         private object[] _src;
         private object[] _dst;
@@ -41,7 +41,7 @@ namespace ArrayCopyBench
             _dst = new object[Offset + Length];
         }
 
-        // 3-arg Array.Copy — matches ConstructRow line 307 (copies Length elements to dst[0..Length]).
+        // 3-arg Array.Copy — (copies Length elements to dst[0..Length]).
         [Benchmark]
         public object ArrayCopy()
         {
